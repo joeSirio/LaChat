@@ -9,7 +9,7 @@ export default function Home() {
   const [user_input, set_user_input] = useState("");
   const [message_history, set_message_history] = useState<any[]>([]);
 
-  const messageEndRef = useRef(null)
+  const messageEndRef =  useRef<null | HTMLDivElement>(null); 
 
   const scrollToBottom = () => {
     messageEndRef.current?.scrollIntoView({behavior: "smooth"})
@@ -20,7 +20,7 @@ export default function Home() {
   }, [message_history]);
 
 
-  function onKeyPressed(e) {
+  function onKeyPressed(e:  React.KeyboardEvent<HTMLInputElement>) {
     if(e.key === "Enter"|| e.key === "NumpadEnter"){
       getJoke();
     }
