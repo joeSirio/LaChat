@@ -27,7 +27,7 @@ app.add_middleware(
     allow_headers = ["*"]
 )
 
-@app.get("/")
+@app.get("/api/")
 async def root():
     return {"message": "Hello World"}
 
@@ -35,7 +35,7 @@ async def root():
 openai.organization = "org-wNnlQ23ytZABK64SL3g8muHx"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-@app.get("/joke/{input_message}")
+@app.get("/api/joke/{input_message}")
 def laugh_gpt(input_message: str, model = "gpt-3.5-turbo") -> str:
     """
     Takes an input message and returns a response, formatted as a joke.
