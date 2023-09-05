@@ -8,7 +8,7 @@ export class APIService {
     
     async GetJoke(user_input: string) {
         try{
-            let response = await fetch('/api/joke/' + encodeURIComponent(user_input))
+            let response = await fetch('localhost:8000/api/joke/' + encodeURIComponent(user_input))
             return await response.json();
         }
         catch(error){
