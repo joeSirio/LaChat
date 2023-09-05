@@ -8,7 +8,7 @@ export class APIService {
     
     async GetJoke(user_input: string) {
         try{
-            let response = await fetch('https://laugh-chat-fss3.vercel.app/api/joke/' + encodeURIComponent(user_input))
+            let response = await fetch('/api/joke/' + encodeURIComponent(user_input))
             return await response.json();
         }
         catch(error){
