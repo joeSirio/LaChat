@@ -1,6 +1,7 @@
 import os
 import openai
 import json
+from dotenv import load_dotenv
 
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
@@ -31,9 +32,9 @@ app.add_middleware(
 async def root():
     return {"message": "Hello World"}
 
-
-openai.organization = "org-wNnlQ23ytZABK64SL3g8muHx"
-openai.api_key = os.getenv("OPENAI_API_KEY")
+load_dotenv()
+openai.organization = os.environ.get("OPENAI_ORG")
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 @app.get("/api/joke/{input_message}")
 def laugh_gpt(input_message: str, model = "gpt-3.5-turbo") -> str:
