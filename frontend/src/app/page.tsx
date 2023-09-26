@@ -57,9 +57,9 @@ export default function Home() {
           <h1>LaughChat</h1> 
         </div>
         <div className='header-lower'>
-          <a href='#'>How It Works</a>
+          {/* <a href='#'>How It Works</a>
           <a href='#'>Settings</a>
-          <a href='#'>Logout</a>
+          <a href='#'>Logout</a> */}
         </div>
       </header>
       <main>
