@@ -4,11 +4,12 @@
 
 :root {
   --content-spacing: 25px;
+  --main-bg-color: #E28585;
 }
 
 body {
   color: #061621;
-  background: #E28585;
+  background: var(--main-bg-color);
 }
 
 h1{
